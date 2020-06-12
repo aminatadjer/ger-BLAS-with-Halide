@@ -39,12 +39,12 @@ int alpha=4;
         // domain" and using it inside an update definition:
 RDom rdom(0, vectorX.width());
 ger(w,h)=alpha*sum(vectorX(rdom, h) * vectorY(w, rdom))+matriceA(w,h);
-Buffer<int> output =ger.realize(matriceA.width(),matriceA.height());
+matriceA =ger.realize(matriceA.width(),matriceA.height());
 ofstream ostrm("outH.txt");
-    for (int j = 0; j < output.height(); j++) {
-        for (int i = 0; i < output.width(); i++) {
+    for (int j = 0; j < matriceA.height(); j++) {
+        for (int i = 0; i < matriceA.width(); i++) {
 	    
-            ostrm << "a["<< j << "][" << i << "]=" << output(i, j) << "\n";
+            ostrm << "a["<< j << "][" << i << "]=" << matriceA(i, j) << "\n";
             }
         }
     
