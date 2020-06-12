@@ -1,7 +1,12 @@
 
-
-echo "Compiling halide one..."
-g++ ./src/gerBlas_halide.cpp -g -L ../Halide/bin -I ../Halide/include -I ../Halide/tools  -lHalide -ldl -lpthread -std=c++11 -o ./bin/gerBlas_halide
+while getopts p: opt
+do
+    case "${opt}" in
+        p) halidePath=${OPTARG};;
+    esac
+done
+echo "Compiling halide code."
+g++ ./src/gerBlas_halide.cpp -g -L ${halidePath}/bin -I ${halidePath}/include -I ${halidePath}/tools  -lHalide -ldl -lpthread -std=c++11 -o ./bin/gerBlas_halide
 
 echo "Compiling C code "
  gcc ./src/gerBlas_C.c -o ./bin/gerBlasC
