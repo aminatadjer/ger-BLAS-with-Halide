@@ -12,12 +12,12 @@ echo "Compiling C code "
  gcc ./src/gerBlas_C.c -o ./bin/gerBlasC
 
 echo "Run halide exec"
-LD_LIBRARY_PATH=../Halide/bin ./bin/gerBlas_halide
+LD_LIBRARY_PATH=${halidePath}/bin ./bin/gerBlas_halide
 
 echo "Run c exec"
  ./bin/gerBlasC
 
-diff --brief <(sort outC.txt) <(sort outH.txt) >/dev/null
+diff --brief <(sort ./files/outC.txt) <(sort ./files/outH.txt) >/dev/null
 comp_value=$?
 if [ $comp_value -eq 1 ]
 then
