@@ -58,4 +58,6 @@ To execute the script you need to pass Halide path in parameter ``` /path/to/Hal
     2. Compile gerBlas_C.c
     3. Run gerBlas_halide and gerBlasC.
     4. Finally, the script will compare between the results (Halide and C versions).
+    
+ We use the file in.txt to read m,n,alpha,A,X and Y
 
