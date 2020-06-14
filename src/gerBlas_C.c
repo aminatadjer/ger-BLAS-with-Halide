@@ -64,8 +64,8 @@ int main()
     // Because we read the rows and columns of x and y with m and n (in the loop).
     // Now all the variables are initialized
     // This loop will calculate for each cell of the matrix a[i][j]=alpha*x[i][j]+alpha*x[i][0]*y[0][j]
-    for(i=0;i<3;i++){
-        for(j=0;j<5;j++){
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
             a[i][j]=a[i][j]+alpha*x[i][0]*y[0][j];
             fprintf(out,"a[%d][%d]=%d\n",i,j,a[i][j]);
         }
